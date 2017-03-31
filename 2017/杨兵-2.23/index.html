@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+<style type="text/css">
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+h1{
+	color: #228DFF;
+}
+
+div{
+	text-align: center;	
+}
+h1{
+	margin-top:330px;
+}
+input{
+    width: 600px;
+    height: 35px;
+	border: 2px solid #1e91ff;
+	border-radius:0 5px 5px 0;
+}
+input:focus{
+    outline: 0;
+    border: 2px solid #f95d5d;
+    box-shadow: 0px 0px 15px 0px #f95d5d;
+  }
+ #text{
+ 	font-size: 17px;
+ }
+button{
+	width: 60px;
+	height: 41px;
+   background-color:#1e91ff;
+   margin-left: -6px;
+   border:none;
+   color: #Fff;
+   border-radius:5px;
+}
+button:focus{
+    outline: 0;
+    border: 1px solid #f95d5d;
+    box-shadow: 0px 0px 15px 0px #f95d5d;
+  }
+
+</style>
+</head>
+<body>
+<div>
+ <h1>狗不理_先生天气预报</h1>
+<input  id="text" type="" name="">
+<button onclick="timeOne()">确定</button>
+<div id="time"></div>
+</div>
+
+
+<script type="text/javascript">
+
+var str={
+    "HeWeather5": [
+        {
+            "basic": {
+                "city": "北京",
+                "cnty": "中国",
+                "id": "CN101010100",
+                "lat": "39.904000",
+                "lon": "116.391000",
+                "update": {
+                    "loc": "2017-03-23 16:02",
+                    "utc": "2017-03-23 08:02"
+                }
+            },
+            "daily_forecast": [
+                {
+                    "astro": {
+                        "mr": "03:07",
+                        "ms": "13:23",
+                        "sr": "06:13",
+                        "ss": "18:29"
+                    },
+                    "cond": {
+                        "code_d": "305",
+                        "code_n": "305",
+                        "txt_d": "小雨",
+                        "txt_n": "小雨"
+                    },
+                    "date": "2017-03-23",
+                    "hum": "58",
+                    "pcpn": "5.8",
+                    "pop": "100",
+                    "pres": "1024",
+                    "tmp": {
+                        "max": "10",
+                        "min": "2"
+                    },
+                    "uv": "2",
+                    "vis": "13",
+                    "wind": {
+                        "deg": "125",
+                        "dir": "东风",
+                        "sc": "微风",
+                        "spd": "3"
+                    }
+                },
+                {
+                    "astro": {
+                        "mr": "03:49",
+                        "ms": "14:22",
+                        "sr": "06:11",
+                        "ss": "18:30"
+                    },
+                    "cond": {
+                        "code_d": "305",
+                        "code_n": "104",
+                        "txt_d": "小雨",
+                        "txt_n": "阴"
+                    },
+                    "date": "2017-03-24",
+                    "hum": "68",
+                    "pcpn": "3.3",
+                    "pop": "100",
+                    "pres": "1022",
+                    "tmp": {
+                        "max": "7",
+                        "min": "0"
+                    },
+                    "uv": "2",
+                    "vis": "14",
+                    "wind": {
+                        "deg": "43",
+                        "dir": "南风",
+                        "sc": "微风",
+                        "spd": "3"
+                    }
+                },
+                {
+                    "astro": {
+                        "mr": "04:28",
+                        "ms": "15:25",
+                        "sr": "06:10",
+                        "ss": "18:31"
+                    },
+                    "cond": {
+                        "code_d": "101",
+                        "code_n": "100",
+                        "txt_d": "多云",
+                        "txt_n": "晴"
+                    },
+                    "date": "2017-03-25",
+                    "hum": "54",
+                    "pcpn": "0.0",
+                    "pop": "10",
+                    "pres": "1022",
+                    "tmp": {
+                        "max": "14",
+                        "min": "4"
+                    },
+                    "uv": "4",
+                    "vis": "18",
+                    "wind": {
+                        "deg": "246",
+                        "dir": "南风",
+                        "sc": "微风",
+                        "spd": "0"
+                    }
+                }
+            ],
+            "status": "ok"
+        }
+    ]
+};
+function timeOne(){
+
+ 		var text = document.getElementById("text").value;
+        var time = document.getElementById("time");
+
+        if(text=="北京"){
+
+		time.innerText = "地区:"+str.HeWeather5[0].basic.city+",天气:" + str.HeWeather5[0].daily_forecast[0].cond.txt_d + ",日期：" + str.HeWeather5[0].daily_forecast[0].date;
+        }else{
+        	time.innerText = "";
+        }		
+	}
+
+
+</script>
+</body>
+</html>

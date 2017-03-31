@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+</head>
+<body>
+<!-- .通过for循环 输出1到150并有如下要求。
+   .在3的倍数的数字后加上soo。
+   .在5的倍数的数字后面加上woo。
+   .是7的倍数上加上qoo。
+   通过for循环打印正三角形，倒三角形,菱形。封装成函数,具有扩张性 -->
+
+      <script type="text/javascript" >
+
+      for (var i = 1; i<=150; i++) {
+
+        document.write(i)
+        if (i%3==0) {
+
+      document.write("soo")
+       if (i%5==0) {
+
+         document.write("woo")
+       }
+       if (i%7==0) {
+           document.write("qoo")
+       }
+        }
+document.write("<br/>")
+
+ }
+
+ triangle(5);
+    function triangle(n){ 
+      document.write("<p style='text-align:center;'</p>")
+      for(var i=1;i<=n;i++){
+              for(var k=1;k<=2*i-1;k++){
+          document.write("*");
+        }
+        document.write("<br/>");
+        }
+          document.write("</p>")
+      }
+
+
+
+    
+      </script>  
+
+             
+</body>
+</html>

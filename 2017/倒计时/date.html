@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+
+  <style type="text/css">
+     #time{
+      text-align: center;
+      font-size: 30px;
+      color: #ff0000;
+      font-family: '微软雅黑';
+      font-weight: bolder;
+     }
+  
+  </style>
+
+</head>
+<body>
+
+  <div id="time"></div>
+
+  <script type="text/javascript">
+    function xiaFeng(){
+       var endTime = new Date(2017,5,6);//截止时间
+
+       var currentTime = new Date();//当前时间
+
+       var time = (endTime-currentTime)/1000;//相差的秒数
+        //天数
+         var date  = Math.floor(time/(60*60*24));
+         //(time-(date*24*60*60))/3600
+         var H  = checkNumber(Math.floor((time/(60*60))%24));//小时
+          
+         var M =  checkNumber(Math.floor((time/60)%60));//分钟
+
+         var S = checkNumber(Math.floor(time%60));//秒
+
+         var ms = Math.floor((((time*1000)%1000))/100);//毫秒
+         //找到ID为time的DIV
+         var div = document.getElementById('time');
+         //给div书写内容
+         div.innerText = "距离高考还有"+date+"天"+H+":"+M+":"+S+":"+ms;
+}
+
+         xiaFeng();//防止首次进入,显示为空白
+
+         setInterval(xiaFeng,100);//开启定时器
+
+ 
+    /**
+     * [checkNumber 将小于10的数进行补零处理]
+     * @param  {[type]} num [数字]
+     * @return {[type]}     [返回处理后的数字]
+     */
+    function checkNumber(num) {
+            
+      return  num<10?"0"+num:num;
+         
+    }    
+
+
+
+
+
+     
+                 //每隔指定时间,计算一个表达式
+                 //setInterval("alert('啦啦啦')",2000);
+                 //setInterval(box,2000); 传递函数名
+                 //setInterval(function(){},1000)传递匿名函数
+                   
+
+/* //找到id为Time 的div 并返回          
+ var obj =  document.getElementById('time');
+//首先执行一次
+  box(); 
+//开时定时器
+ setInterval(box,1000); 
+
+   function box(){
+        //获取当前时间 
+       var time = new Date();  
+        //将当前时间设置到div上
+           obj.innerText= time;
+   }*/
+
+
+
+          
+
+
+
+
+
+       
+
+
+
+
+
+
+
+ /*
+       var currentTime = 1489680000000;
+
+
+       var  S = currentTime/1000;
+
+       var date =   S/(24*60*60);
+
+       var H = S/(60*60);
+
+       var m = S/60;*/
+       
+/*       function Dome(name,age){
+            this.name = name;
+            this.age = age;
+           this.getAge = function(){
+              return this.age;
+           };
+           this.setAge = function(age){
+                this.age = age; 
+           }
+       }
+
+       var  ds = new Dome('xiaohei',18);
+
+         document.write(ds.getAge()+"<br/>");
+               ds.setAge(20)
+         document.write(ds.getAge());   */    
+  
+
+     /**
+      * box.getTime()获取当前时间毫秒数
+      * box.getFullYear()获取4位的年份
+      * box.getMonth() 获取月份  0-11
+      * box.getDate()  获取日期 
+      * box.getDay()   0='星期日'  123456
+      * box.getHours()  24小时制时间
+      * box.getMinutes() 获取分钟
+      * box.getSeconds() 获取秒钟
+      * box.getMilliseconds() 当前毫秒数 默认为零(设置的时候)
+      */
+
+
+
+
+
+
+
+
+
+/*       
+      var time =  document.getElementById('time');//通过ID找节点
+
+       
+       
+       var Day = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        function getCurrentTime(){
+         var currentTime  = new Date();
+
+         var year = currentTime.getFullYear();//年
+         var month = currentTime.getMonth()+1;//月 0-11
+         var date   = currentTime.getDate();//分
+         var day = Day[currentTime.getDay()];//星期 0 - 6
+         var H = currentTime.getHours();//小时
+         var M = currentTime.getMinutes();//分钟
+         var S = currentTime.getSeconds();//秒
+
+      //设置div头部标签到
+      time.innerText = year+"年"+month+"月"+date+"日---"+day+"---"+H+":"+M+":"+S;
+}
+
+
+    setInterval(getCurrentTime,1000);//第1个参数是一个函数,第2个时间间隔*/
+  </script>
+
+
+</body>
+</html>

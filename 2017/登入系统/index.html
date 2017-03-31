@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+
+var box=new Array();
+var user=null;
+
+function User(account,password,name,balance){  
+
+this.account=account;
+this.password=password;
+this.name=name;
+this.balance=balance;
+this.input=function(){
+ return "\n账号"+this.account+"\n密码"+this.password+"\n姓名"+this.name+"\n余额"+this.balance;
+  }
+}
+
+function Goods(goodsName, price,type,stock){
+  this.goodsName=goodsName;
+  this.price=price;
+  this.type=type;
+  this.stock=stock;
+  this.input=function(){
+  return "\n商品名"+this.goodsName+"\n单价"+this.price+"\n商品类型"+this.type+"\n库存"+this.stock;
+  }
+}
+
+
+  home();
+//一级界面
+
+function home(){
+  var key=prompt("魔形用户系统\n1.登入\n2.注册\n3.退出魔形系统");
+
+  switch(key){
+		       case"1":
+		      //登入页面
+		         enter();
+		         break;
+		        
+		       case"2":
+		        //注册页面   
+		         register();
+		         break;
+
+		        case"3":
+		        //退出页面
+		          return;
+		          default:
+		          alert("请输入有效数字");
+ }         
+home();//递归
+}
+//二级界面
+
+function home1(){
+   var key=prompt("魔形商城界面\n1.购买商品\n2.添加商品\n3.商品下架\n4.个人中心\n5.退出魔形商城");
+
+switch(key){
+			   case"1":
+		       // 进入购买商品页面
+			   shopping();
+			   break;
+
+			   case"2":
+			   //进入添加商品页面
+			   append();
+			   break;
+
+			   case"3":
+			   //进入商品下架页面
+			   undercarriage();
+			   break;
+
+			   case"4":
+			   //进入个人中心页面
+			   
+			   personal();
+			   break;
+		      
+		       case"5":
+		       //返回第一界面
+		       return;
+		       default:
+		       alert("请输入有效数字");
+  }
+home1();//递归
+}
+//三级界面
+
+function home2(){
+  var key=prompt("个人中心界面\n1.查看用户信息\n2.查看余额\n3.充值\n4.退出个人中心");
+
+  switch(key){
+               case"1":
+               //进入查看用户信息页面
+               viow();
+               break;
+
+               case"2":
+               //进入查看余额页面
+               
+               alert("您的余额为"+user.balance);
+               break;
+
+               case"3":
+               //进入充值页面
+               recharge();
+               break;
+                  
+               case"4":
+               //返回第二界面
+               return;
+               default:
+               alert("请输入有效数字");
+   }
+home2();//递归
+}
+//  进入购买商品页面
+function shopping(){
+
+
+}
+//进入添加商品页面
+
+function append(){
+
+
+}
+//进入商品下架页面
+function undercarriage(){
+
+
+}
+//登入页面
+
+function enter(){
+
+	var account=prompt("*请输入您的ID*");
+    var password=prompt("*请输入您的密码*");
+
+    for (var i=0; i<box.length; i++) {
+
+        if (account==box[i].account&&password==box[i].password) {
+        	user=i;
+        	alert("登入成功");
+        	home1();//进入二级界面
+        	return;
+        }
+  
+    }
+   return alert("您的账号或密码错误，请重新登入");
+}
+//注册页面
+
+function register(){
+
+var account=prompt("请输入您的ID");
+for (var i = 0;i<box.length;i++) {
+
+if (account==box[i].account) {
+	 return alert("该用户已被注册");
+  }
+}
+var password=prompt("请输入您的密码");
+var passwordOne=prompt("请再次输入您的密码") ;
+if (password!=passwordOne) {
+	return alert("您输入的密码不一致");
+}
+var name=prompt("请输入您的用户名");
+var balance=prompt("请输入您要存的金额")-0;
+var stu= new User(account,password,name,balance);
+
+box.push(stu);
+  alert("恭喜你，注册成功了！");
+}
+
+//进入三级页面//个人中心页面
+function personal(){
+    home2();
+    return;	
+}       
+ //进入查看用户信息页面
+ 
+function viow(){
+   var str="";
+   str=box[user].input();
+   alert(str);
+} 
+ //进入充值页面
+ 
+function recharge(){
+    var balanceOne=prompt("请问您要充值多少")-0;
+    if (balanceOne<=0) {
+    	      return alert("您输入有误");
+    }
+user.balance=balanceOne;
+alert("充值成功");
+}
+
+
+
+</script>
+</body>
+</html>

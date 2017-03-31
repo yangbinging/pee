@@ -1,0 +1,58 @@
+body{
+	font-family: "微软雅黑"
+}
+.box{
+     width: 640px;
+     margin: auto;
+}
+.title{
+    font-size: 24px;
+    text-align: center;
+}
+.times{
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+	margin-bottom: 15px;
+}
+.times_left{
+	float: left;
+	font-size: 12px;
+	color: #999;
+	padding-bottom: 5px;
+
+}
+.times_left>p{
+	line-height: 0;
+}
+.times_right{
+	float:right;
+}
+.times_right>a{
+	font-size: 12px;
+	text-decoration: none;
+
+}
+.tu1,.tu2,.tu3{
+	display:inline-block;
+    width: 40px;
+    height: 29px;
+	background-image: url(../news/imas.jpg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+
+}
+.tu2{
+	background-position: 0 -34px;
+}
+.tu3{
+	background-position: 0 -67px;  
+}
+.name{
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+}
+.conter>p{
+	text-indent:  2em;
+	line-height: 24px;
+}

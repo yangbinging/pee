@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+     #time{
+         text-align: center;
+         font-size: 50px;
+         font-family: "微软雅黑";
+         font-weight: bolder;
+        color: red;
+     }
+	</style>
+</head>
+<body>
+
+<div id="time"></div>
+
+<script type="text/javascript">
+
+//getFullYear 获取当前年
+//getMonth
+setInterval(box,10);
+box();
+
+function box(){
+
+var endTime=new Date(2017,5,6);//截止时间
+
+var currentTime= new Date();//当前时间
+
+var time=(endTime-currentTime)/1000;//相差的毫秒数
+
+var date =Math.floor(time/(60*60*24));
+//取得总共天数
+var h=chenckNumber(Math.floor((time/(60*60))%24));
+//取的余下小时
+var f=chenckNumber(Math.floor((time/60)%60));
+//余下小时的分钟
+var  s=chenckNumber(Math.floor(time%60));
+/*document.write(date);/*//*/Math.ceil 向上取整*/
+var  m=chenckNumber(Math.ceil((time*1000%1000)/100));
+
+  var obj =document.getElementById("time");
+
+//obj.innerText属性的作用是给标签书写文本
+  obj.innerText="距离考试时间还有:"+date+"天"+h+":"+f+":"+s+":"+m;
+  
+}
+
+
+
+
+function chenckNumber(num){
+
+    return  num<10?"0"+num:num;
+}
+
+/* var obj =document.getElementById("time");
+//首先执行一次
+setInterval(box,1000);
+box()
+function box() {*/
+
+
+/* var time =new Date();//获取当前时间
+ var obj =document.getElementById("time");//
+ obj.innerText=time ;
+}*/
+
+
+</script>
+</body>
+</html>

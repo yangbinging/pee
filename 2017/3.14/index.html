@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+  
+<script type="text/javascript">
+
+
+
+/*function box(){
+var sum=0;
+//arguments.length来确定传递参数长度
+for (var i=0; i <arguments.length;i++){
+
+  sum += arguments[i];
+}
+  return sum;
+}
+ var val=box(1,2,3,4,5);//定义一个变量存储结果
+ document.write(val+"<br/>");
+
+ var box=0;
+*/
+
+/*var num=0;
+var sum=0;
+function dome(){
+  num++;
+  sum=sum+num;
+
+  if (num==100) {
+  	return sum;
+  }else{
+
+ return dome();  	
+  }
+}
+document.write(dome());
+
+//阶乘 9*8*7*6*5*4*3*2*1
+function box(n){  
+if (n<=1) {
+	return n;
+}else{
+	return n*box(n-1);
+}
+}
+document.write(box(9));*/
+
+/*var key = prompt('请登入账号！\n1.登入\n2.注册\n3.退出');*/
+//主程序    没有进行操作的话，程序是不会结束的
+//        没有输入指令。或输入错误，提示输入错误，
+//         并且回到主页面
+// 登录流程   请输入账号，请输入密码，
+//         如果不匹配或没注册，提示登入失败
+//         之后回到主界面
+// 注册流程 请输入账号，请输入密码，请确认密码
+//          如果第一次密码和第二次密码输入不匹配，
+//          提示，两次密码不同请重新注册
+//          之后回到主页面
+/*//选择退出后 整个程序结束
+//
+var flag=true;
+//用户名
+//
+//
+var useName;
+//用户密码
+//
+var passWord;
+
+while(flag) {
+var key = prompt('请登入账号！\n1.登入\n2.注册\n3.退出');
+
+
+switch(key){
+   case "1":
+    if(useName!==undefined){
+
+    var useNameInput=prompt ("请输入账号！");
+	var passWordInput=prompt ("请输入密码！");
+	if(useName==useNameInput&&passWord==passWordInput){
+
+		alert("亲，登入成功！");
+	}
+
+    }else{
+    	alert("死去注册吧！");
+    }
+   break;
+  case"2":
+    var name=prompt("请输入账号！");
+    var mina=prompt("请输入密码！");
+    var minasuer=prompt("请再次输入密码");
+    if (mina==minasuer) {
+       useName=name;
+       passWord=mina;
+       alert("恭喜你，注册成功了！");
+    }else{
+    	alert("你输入的密码不同，请重新输入！");
+    }
+  break;
+  case"3":
+   flag=false;
+   break;
+   default:
+   alert("亲，你丫的没注册！");
+}
+
+}*/
+function home(){
+   var key = prompt('请登入账号！\n1.登入\n2.注册\n3.退出');
+     switch(key){
+         case"1":
+
+         login();
+         break;
+
+         case"2":
+         register();
+         break;
+
+         case"3":
+
+         return;
+         
+         default:
+         alert("亲，你输入有误!");
+   }home();
+}
+
+
+    function login() {
+     if(useName!==undefined){
+
+    var useNameInput=prompt ("请输入账号！");
+	var passWordInput=prompt ("请输入密码！");
+	if(useName==useNameInput&&passWord==passWordInput){
+
+		alert("亲，登入成功！");
+	}
+
+    }else{
+    	alert("死去注册吧！");
+    }
+
+}
+
+
+
+  function  register(){
+var name=prompt("请输入账号！");
+    var mina=prompt("请输入密码！");
+    var minasuer=prompt("请再次输入密码");
+    if (mina==minasuer) {
+       useName=name;
+       passWord=mina;
+       alert("恭喜你，注册成功了！");
+    }else{
+    	alert("你输入的密码不同，请重新输入！");
+    }
+}
+
+
+home();
+
+
+//object 类型
+//创建object 类型两种 一种 new运算符；第二种 自变量形式
+//Anay 类型
+
+
+
+
+
+/*
+var user= new Object();
+
+ user.name="xiaohei";
+
+  alert(user.name);
+  delete(user.name);//删除对象属性
+   alert(user.name);
+
+*/
+
+
+/*var user ={
+name:"xiaohei",
+age:17,
+sex:"女",
+heigt:200
+}
+//遍历对象  for in  
+
+for (attr in user){//attr  接受 的是stringleix属性名称
+document.write(user[attr])
+
+}
+
+
+//this.name=name
+//this.age=age
+//var xiaohei= new Pepole('小黑',18,'男')
+
+/*var userOne=new Object();
+var userTwo=userOne;
+userOne="小白";
+userTwo="小黑";
+document.write(userOne","userTwo);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+<style type="text/css">
+   #time{
+       text-align: center;
+       font-size: 50px;
+       color: #ff0000;
+       font-family: "微软雅黑";
+       font-weight: bolder;
+
+
+   }
+</style>
+
+	<script type="text/javascript">
+
+/*var date =new Date(Date.parse("12/28/2017"));
+//new 是获取系统当前时间
+//省略Date.parse
+document.write(date);*/
+
+/*var date =new Date(Date.UTC(2017,3));
+//UTC 方法 月份是按0开始的
+document.write(date);*/
+
+
+/*   var time=document.getElementById("time")*/
+//
+
+var Day=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+function getCurrentTime() {
+	// body...
+var date =new Date();   
+
+ var year=(date.getFullYear()); 
+ var Month=(date.getMonth ()+1);
+ var dat=(date.getDate()); 
+var day=Day[date.getDay()]; 
+ var hour=(date.getHours()); 
+var min=(date.getMinutes());  
+ var sec=(date.getSeconds()); 
+
+time.innerText=year+"年"+Month+"月"+dat+"日---"+day+"---"+hour+":"+min+":"+sec;
+}
+var obj=document.getElementById("time")
+ojb.innerText=setInterval(getCurrentTime,1000);
+
+/*
+    getFullYear 方法        
+    getMinutes 方法 
+     getDay 方法 
+    getDate 方法*/ 
+       
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+        
+
+	</script>
+</head>
+<body>
+<div id="time">客户身份还是房价</div>
+</body>
+</html>

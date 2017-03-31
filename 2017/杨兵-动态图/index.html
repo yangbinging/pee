@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#imgs{
+    width: 800px;
+    height: 540px;
+
+}
+div{
+	text-align: center;
+
+}
+#box{
+	margin-bottom: 236px;
+}
+
+	</style>
+
+
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+var imgsList="images/img1.jpg,images/img2.jpg,images/img3.jpg,images/img4.jpg,images/img5.jpg".split(",");
+
+
+var index=0;
+var int=setInterval(back,500);
+//点击上一张
+function show(){
+	if (index==0) {
+		index=imgsList.length;
+	}
+	var imgs=document.getElementById('imgs');
+	imgs.src=imgsList[--index];
+	console.log(index);
+}
+
+
+//点击下一张
+function back(){
+     if (index==imgsList.length-1) {
+     	index=-1;
+     }
+var imgs=document.getElementById('imgs') ;
+imgs.src=imgsList[++index];
+}
+ 
+
+//停止
+function buff(){
+
+clearInterval(int);
+
+}
+
+//复原
+function buf(){
+
+int=setInterval(back,500);
+
+}
+
+</script>
+<div id="main">
+<img src="images/left.png" onclick="show()" onmouseover="buff()" onmouseout="buf()" id="box">
+<img src="images/img1.jpg"  onmouseover="buff()" onmouseout="buf()" id="imgs" >
+<img src="images/right.png"onclick="back()"    onmouseover="buff()" onmouseout="buf()" id="box">
+</div>
+
+</body>
+</html>

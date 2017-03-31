@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+<script type="text/javascript">
+ /*  * User(对象) 属性有 account(账号) password(密码) 
+   *                   name(姓名) sex(性别) balance(余额)。
+   *   1.创建对应的构造函数,
+   *   2.User对象在注册成功后创建            
+   *   3.主界面
+   *     1.登录
+   *     2.注册
+   *     3.退出
+   *   4.登录成功后进入二级界面   
+   *    个人管理界面
+   *      1.存钱
+   *      2.取钱
+   *      3.查看余额
+   *      4.退出*/
+var user =null;
+
+function User(account,password, name,sex,balance){ 
+this.account=account;
+this.password=password;
+this.name=name;
+this.sex=sex;
+this.balance=balance;
+}
+
+home();
+
+//主页面
+
+function home(){
+   var key = prompt('请登入ID！\n1.登入\n2.注册\n3.退出');
+     switch(key){
+         case"1":
+
+         login();
+         break;
+
+         case"2":
+         register();
+         break;
+
+         case"3":
+
+         return;
+         
+         default:
+         alert("亲，你输入有误!");
+   }
+   home();//递归
+}
+
+
+ //登入页面
+  function login(){
+  if(user==null){
+  	return alert("亲,您还没有注册 ");
+  }
+    var account=prompt('请输入你的ID！'); 
+    var password=prompt('请输入您的密码');
+    if(user.account!=account||user.password!=password){
+    	return alert("您的账号或密码输入有误");
+    }
+alert("登入成功");
+
+//进入二级界面
+  dome();
+}
+function dome(){  
+var  key= prompt('个人管理界面\n1.存钱\n2.取钱\n3.查看余额\n4.退出');
+    switch(key){
+         case"1":
+
+         save();
+         break;
+
+         case"2":
+         withdraw();
+         break;
+
+         case"3":
+      alert("您的余额为"+user.balance);
+         break;
+
+         case"4":
+
+        return;
+        default:
+        alert('输入错误') ;   
+    }
+    dome();
+}
+//存钱
+function save(){
+     var accountInput=prompt("请输入您要存的金额")-0;
+     if (accountInput<=0) {
+                return alert("您输入有误");
+            }
+    user.balance+=accountInput;
+    alert("存钱成功");
+
+      }
+
+//取钱
+//
+function withdraw(){
+   var accountInput=prompt("请输入您要取的金额")-0;
+   if(accountInput<=0){
+   	return alert("请输入有效金额");
+
+   }
+   if (accountInput>user.balance) {
+   	return alert("您的余额不足");
+   }
+   user.balance-=accountInput;
+   alert("取钱成功");
+
+}
+
+
+
+
+//z注册页面
+    function  register() {
+     	var account=prompt('请输入你的ID！');
+       if (account==""){
+       	return alert('您输入的ID不能为空');
+       }
+      var password=prompt('请输入您的密码');
+      var passwordTow=prompt('请再次输入密码');
+      if (password==""||password!=passwordTow) {
+      return alert('您两次输入的密码有问题！');
+      }
+      var name=prompt('请输入您的名字');
+      var sex=prompt('请输入您的性别' );
+      var balance=prompt('请输入你的金额')-0;
+
+user =new User(account,password,name,sex,balance);
+   alert('您已成功注册');
+}
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

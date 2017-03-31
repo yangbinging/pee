@@ -1,0 +1,42 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+
+}
+.box{
+	width: 100%;
+	margin: auto;
+}
+.top{
+	width: 961px;
+	height: 113px;
+}
+.top_left{
+	width: 264px;
+	height: 64px;
+	border: 1px solid #fff;
+	background-color: #ff9700;
+}
+.top_right{
+	float: right;
+    
+}
+ul{
+	list-style: none;
+}
+.nav>li{
+	float: left;
+	margin-right:25px; 
+}
+.nav ul{
+	display: none;
+	position: absolute;
+	margin-left: -30px;
+    
+
+}
+.nav>li:hover>ul{
+	display: block;
+	background-color:#ff9700; 
+}

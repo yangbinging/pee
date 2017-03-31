@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+
+
+
+
+function Students(id,name,sex,age,score){
+  this.id=id;
+  this.name=name;
+  this.sex=sex;
+  this.age=age;    
+  this.score=score;
+this.input=function(){  
+return "id="+this.id+",name="+this.name+",sex="+this.sex+",age="+this.age+",score="+this.score+"\n"}
+}
+/*随机参数10-15名学生，ID按顺序来 年龄随机 成绩随机 性别随机
+
+
+学生管理系统
+1.查看所有学生
+2.按年龄排序从小到大
+3.按成绩排序从大到小*/
+ var stuList=Array();
+for (var i = 0; i <10; i++) {
+	var id =i+1;
+	var name ="小白"+(i+1);
+	var sex="";
+	if(Math.floor(Math.random()*2)>0){
+
+		sex="女";
+	}else{
+		sex="男";
+	}
+  var age=18+Math.floor(Math.random()*8);
+  var score=Math.floor(Math.random()*101);
+  var stu=new Students(id,name,sex,age,score);
+  stuList.push(stu);
+}
+
+
+
+ function home(){
+    var key=prompt("学生管理系统\n1.查看所有学生\n2.按年龄排序\n3.按成绩排序\n4.退出");
+      switch(key){
+         case"1":
+
+         studentsOne();
+         break;
+         case"2":
+
+         ageOne();
+         break;
+
+         case"3":
+
+         scoreOne();
+         break;
+
+         case"4":
+
+         return;
+
+         default:
+         alert("输入错误");
+    
+      }
+    home();
+    }
+function studentsOne(){ 
+
+   var str ="";
+   for (var i=0; i <stuList.length; i++) {
+
+     str += stuList[i].input();
+
+   }
+   alert(str);
+}
+ 
+ function ageOne(){
+         for (var i = 1; i < stuList.length; i++) {
+
+         for (var j = 0; j<stuList.length-i; j++){ 
+
+            if (stuList[j].age>stuList[j+1].age) {
+
+                        var temp=stuList[j];
+                        stuList[j]=stuList[j+1];
+                        stuList[j+1]=temp;
+          }
+     }
+}
+ studentsOne();
+ }
+
+function scoreOne() {
+        for (var i = 1; i <stuList.length; i++) {
+
+         for (var j = 0; j<stuList.length-i; j++){ 
+
+            if (stuList[j].score<stuList[j+1].score) {
+
+                        var temp=stuList[j];
+                        stuList[j]=stuList[j+1];
+                        stuList[j+1]=temp;
+          }
+     }
+}
+studentsOne();
+ }
+
+
+home();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+ /* 用户个人管理系统
+   * 单用户操作,以对话框形式进行
+   * User(对象) 属性有 account(账号) password(密码) 
+   *                   name(姓名) sex(性别) balance(余额)。
+   *   1.创建对应的构造函数,
+   *   2.User对象在注册成功后创建            
+   *   3.主界面
+   *     1.登录
+   *     2.注册
+   *     3.退出
+   *   4.登录成功后进入二级界面   
+   *    个人管理界面
+   *      1.存钱
+   *      2.取钱
+   *      3.查看余额
+   *      4.退出*/
+
+ var flag=true;//用户名
+
+var useName;//用户密码
+
+var passWord;
+
+while(flag) {
+var key = prompt('请登入账号！\n1.登入\n2.注册\n3.退出');
+
+switch(key){
+   case "1":
+    if(useName!==undefined){
+
+    var useNameInput=prompt ("account");
+	var passWordInput=prompt ("password");
+	if(useName==useNameInput&&passWord==passWordInput){
+
+		alert("亲，登入成功！");
+	}
+                                    
+    }else{
+    	alert("死去注册吧！");
+    }
+   break;
+  case"2":
+    var name=prompt("account");
+    var mina=prompt("password0");
+    var minasuer=prompt("请再次输入密码");
+    if (mina==minasuer) {
+       useName=name;
+       passWord=mina;
+       alert("恭喜你，注册成功了！");
+    }else{
+    	alert("你输入的密码不同，请重新输入！");
+    }
+  break;
+  case"3":
+   flag=false;
+   break;
+   default:
+   alert("亲，你丫的没注册！");
+}
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>
